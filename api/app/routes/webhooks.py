@@ -2,6 +2,9 @@ from fastapi import APIRouter, Depends, HTTPException, Request
 from sqlalchemy.orm import Session
 from app.database import get_db
 from app.models import Call, Transcript, CallStatus
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).parent.parent.parent.parent))
 from agents.state_machine import ConversationStateMachine
 from agents.empathetic_agent import empathetic_agent
 from app.services.transcription import transcription_manager

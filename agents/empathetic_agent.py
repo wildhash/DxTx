@@ -1,4 +1,7 @@
 from openai import AsyncOpenAI
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).parent.parent / 'api'))
 from app.config import settings
 from typing import Dict, Any, Optional, List
 import json

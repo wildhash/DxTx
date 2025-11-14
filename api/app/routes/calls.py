@@ -2,6 +2,9 @@ from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from app.database import get_db
 from app.models import Call, CallCreate, CallResponse, CallStatus, CallDirection, OutboundCallRequest
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).parent.parent.parent.parent))
 from telephony.telnyx_service import telnyx_service
 from agents.state_machine import ConversationStateMachine
 from typing import List
